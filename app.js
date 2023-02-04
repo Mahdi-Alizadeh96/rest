@@ -52,10 +52,10 @@ app.use('/feed', feedRoutes);
 app.use('/auth', authRoutes);
 
 app.use((error, req, res, next) => {
-  console.log(error);
   const status = error.statusCode || 500;
   const message = error.message;
-  res.status(status).json({ message: message });
+  const data = error.data;
+  res.status(status).json({ message: message, data });
 });
 
 // mongoose.connect('mongodb+srv://Mahdi:158008532@cluster0.wnisj.mongodb.net/blog?retryWrites=true&w=majority')
