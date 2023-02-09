@@ -58,9 +58,9 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message, data });
 });
 
-// mongoose.connect('mongodb+srv://Mahdi:158008532@cluster0.wnisj.mongodb.net/blog?retryWrites=true&w=majority')
-mongoose.connect('mongodb://localhost:27017/blog')
+mongoose.connect('mongodb+srv://Mahdi:158008532@cluster0.wnisj.mongodb.net/blog?retryWrites=true&w=majority')
+// mongoose.connect('mongodb://localhost:27017/blog')
         .then(result => {
-            app.listen(8081);
+            app.listen(8080);
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err, 66))
