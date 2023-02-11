@@ -15,7 +15,7 @@ const fileStorage = multer.diskStorage({
     cb(null, "images");
    },
   filename: (req, file, cb) => {
-    cb(null, file.originalname);
+    cb(null, Math.round(Math.random()*10000) + file.originalname);
   }
 });
 
